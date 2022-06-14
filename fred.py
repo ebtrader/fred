@@ -11,6 +11,12 @@ api_location = r'C:\Users\jsidd\Documents\fred\fred.txt'
 
 fred = Fred(api_location)
 
-df = fred.get_series_df('GDPPOT')
+# df = fred.get_series_df('GDPPOT')
+# df = fred.get_series_df('BAMLH0A0HYM2')
+df = fred.get_series_df('PAYEMS')
+df['value'] = df['value'].astype(int)
+df['change'] = df['value'].diff()
+
+
 print(df)
 
